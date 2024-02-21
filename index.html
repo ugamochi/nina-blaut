@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlyFenders</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fullscreen Video with Button</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fullscreen YouTube Video -->
-    <iframe id="video-background" src="https://www.youtube.com/embed/IUN664s7N-c?si=-FsnIsIV55OdzIY-?autoplay=1&controls=0&loop=1&mute=1&playlist=IUN664s7N-c?si=-FsnIsIV55OdzIY-" frameborder="0" allowfullscreen></iframe>
-
-    <!-- Enter Button -->
-    <button id="enter-button">ENTER</button>
-
-    <!-- Replace VIDEO_ID with your YouTube video ID -->
-
-    <script>
-        // Add event listener to button
-        document.getElementById("enter-button").addEventListener("click", function() {
-            // Redirect to another page or perform any action when the button is clicked
-            window.location.href = "https://www.nationalgeographic.com/"; // Replace with your desired URL
-        });
-    </script>
+<div class="video-container">
+  <div class="video-background">
+    <iframe src="https://www.youtube.com/embed/sVPYIRF9RCQ?si=3P_inIJnv_w-c3aC?autoplay=1&loop=1&controls=0&mute=1&playlist=sVPYIRF9RCQ?si=3P_inIJnv_w-c3aC" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="button-container">
+    <button class="enter-button">ENTER</button>
+  </div>
+</div>
 </body>
 </html>
-
