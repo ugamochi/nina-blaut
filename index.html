@@ -78,9 +78,9 @@
 <div class="video-container">
   <div class="video-background">
     <!-- Mobile version -->
-    <video autoplay muted loop>
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa%20video%20for%20mob%2012200-transcode.mp4" type="video/mp4">
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa%20video%20for%20mob%2012200-transcode.webm" type="video/webm">
+    <video autoplay loop id="mobile-video">
+      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa video for mob 12200-transcode.mp4" type="video/mp4">
+      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa video for mob 12200-transcode.webm" type="video/webm">
       Your browser does not support the video tag.
     </video>
     <!-- Desktop version -->
@@ -94,5 +94,9 @@
     <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
   </div>
 </div>
+<script>
+  // Add muted attribute to mobile video
+  document.getElementById('mobile-video').muted = true;
+</script>
 </body>
 </html>
