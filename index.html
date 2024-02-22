@@ -46,20 +46,56 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  /* Play button styles */
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the play button appears above the video */
+    cursor: pointer;
+  }
+
+  /* Customize play button appearance */
+  .play-button::before {
+    content: "\25B6"; /* Play icon */
+    font-size: 50px;
+  }
 </style>
 </head>
 <body>
 <div class="video-container">
   <div class="video-background">
-    <video autoplay muted loop>
+    <video id="bg-video" autoplay muted loop>
       <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d73939c4fb59c82b18ee4c_jopa-main-fullscreen-23sec%2012200-transcode.mp4" type="video/mp4">
       <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d740f346f5af01d495f06f_jopa-main-fullscreen-12sec-mobile 12200-transcode.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <!-- Play button -->
+    <div class="play-button" id="play-button"></div>
   </div>
   <div class="button-container">
     <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
   </div>
 </div>
+
+<script>
+  // JavaScript to handle play button functionality for mobile devices
+  var video = document.getElementById('bg-video');
+  var playButton = document.getElementById('play-button');
+
+  // Hide the play button when the video is playing
+  video.addEventListener('playing', function() {
+    playButton.style.display = 'none';
+  });
+
+  // Show the play button and play the video when the button is clicked
+  playButton.addEventListener('click', function() {
+    video.play();
+    playButton.style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
