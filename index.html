@@ -10,20 +10,20 @@
     padding: 0;
     height: 100%;
   }
-  
+
   /* Desktop Styles */
   .desktop-container {
-    display: none; /* Initially hide the desktop version */
+    display: block; /* Initially show the desktop version */
   }
 
-  .video-container {
+  .desktop-container .video-container {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
 
-  .video-background {
+  .desktop-container .video-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +34,7 @@
     align-items: center;
   }
 
-  .video-background video {
+  .desktop-container .video-background video {
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -45,15 +45,15 @@
     transform: translate(-50%, -50%);
   }
 
-  .button-container {
+  .desktop-container .button-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
   }
-  
-  .enter-button {
+
+  .desktop-container .enter-button {
     background-color: rgba(255,255,255,0.5);
     color: black;
     padding: 15px 30px;
@@ -65,7 +65,7 @@
     transition: background-color 0.3s; /* Added transition for hover effect */
   }
 
-  .enter-button:hover {
+  .desktop-container .enter-button:hover {
     background-color: rgba(255,255,255,1); /* Fully opaque background on hover */
   }
 
@@ -92,20 +92,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .mobile-container .image-background img {
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      background: url('bg.jpg') left top / cover;
     }
 
     .mobile-container .button-container {
@@ -114,6 +101,22 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+    }
+
+    .mobile-container .enter-button {
+      background-color: rgba(255,255,255,0.5);
+      color: black;
+      padding: 15px 30px;
+      font-size: 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: 0.2em; /* Added letter spacing */
+      transition: background-color 0.3s; /* Added transition for hover effect */
+    }
+
+    .mobile-container .enter-button:hover {
+      background-color: rgba(255,255,255,1); /* Fully opaque background on hover */
     }
   }
 </style>
@@ -136,25 +139,23 @@
 
 <!-- Mobile Version -->
 <div class="mobile-container">
-  <div class="video-container">
-    <div class="image-background">
-      <img id="background-img" src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iW06GgpslgdM/v1/300x225.jpg" alt="Background Image">
-    </div>
-    <div class="button-container">
-      <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
-    </div>
+  <section style="max-height: 100%; margin: auto;">
+    <div id="ripple" style="height: 70rem; background: url('https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iW06GgpslgdM/v1/300x225.jpg') left top / cover;"></div>
+  </section>
+
+  <div class="button-container">
+    <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js'></script>
 <script>
-  // Apply ripple effect to the background image (Mobile Version)
-  $(document).ready(function(){
-    $('#background-img').ripples({
+  $(document).ready(function() {
+    $('#ripple').ripples({
       resolution: 512,
       dropRadius: 20,
-      perturbance: 0.04,
+      perturbance: 0.04
     });
   });
 </script>
