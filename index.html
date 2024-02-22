@@ -71,6 +71,10 @@
     .video-background video.desktop-video {
       display: none;
     }
+    .video-background video {
+      /* Add muted attribute to force mute on mobile */
+      muted: true;
+    }
   }
 </style>
 </head>
@@ -78,9 +82,9 @@
 <div class="video-container">
   <div class="video-background">
     <!-- Mobile version -->
-    <video autoplay muted loop>
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa video for mob 12200-transcode.mp4" type="video/mp4">
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa video for mob 12200-transcode.webm" type="video/webm">
+    <video autoplay loop>
+      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa%20video%20for%20mob%2012200-transcode.mp4" type="video/mp4">
+      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa%20video%20for%20mob%2012200-transcode.webm" type="video/webm">
       Your browser does not support the video tag.
     </video>
     <!-- Desktop version -->
