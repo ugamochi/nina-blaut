@@ -11,6 +11,11 @@
     height: 100%;
   }
   
+  /* Desktop Styles */
+  .desktop-container {
+    display: none; /* Initially hide the desktop version */
+  }
+
   .video-container {
     position: relative;
     width: 100%;
@@ -29,7 +34,6 @@
     align-items: center;
   }
 
-  .video-background img,
   .video-background video {
     min-width: 100%;
     min-height: 100%;
@@ -64,21 +68,88 @@
   .enter-button:hover {
     background-color: rgba(255,255,255,1); /* Fully opaque background on hover */
   }
+
+  /* Mobile Styles */
+  @media only screen and (max-width: 600px) {
+    .desktop-container {
+      display: none; /* Hide the desktop version on mobile */
+    }
+
+    .mobile-container {
+      display: block; /* Show the mobile version on mobile */
+    }
+
+    .mobile-container .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .mobile-container .image-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile-container .image-background img {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .mobile-container .button-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
 </style>
 </head>
 <body>
-<div class="video-container">
-  <div class="video-background">
-    <img id="background-img" src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iW06GgpslgdM/v1/300x225.jpg" alt="Background Image">
-  </div>
-  <div class="button-container">
-    <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
+<!-- Desktop Version -->
+<div class="desktop-container">
+  <div class="video-container">
+    <div class="video-background">
+      <video autoplay muted loop>
+        <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d73939c4fb59c82b18ee4c_jopa-main-fullscreen-23sec%2012200-transcode.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="button-container">
+      <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
+    </div>
   </div>
 </div>
+
+<!-- Mobile Version -->
+<div class="mobile-container">
+  <div class="video-container">
+    <div class="image-background">
+      <img id="background-img" src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iW06GgpslgdM/v1/300x225.jpg" alt="Background Image">
+    </div>
+    <div class="button-container">
+      <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js"></script>
 <script>
-  // Apply ripple effect to the background image
+  // Apply ripple effect to the background image (Mobile Version)
   $(document).ready(function(){
     $('#background-img').ripples({
       resolution: 512,
