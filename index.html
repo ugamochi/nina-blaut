@@ -29,18 +29,6 @@
     align-items: center;
   }
 
-  .video-background img,
-  .video-background video {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
   .button-container {
     position: absolute;
     top: 50%;
@@ -52,13 +40,14 @@
   .enter-button {
     color: black;
     padding: 15px 30px;
-    background-color: rgb(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     font-size: 24px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     letter-spacing: 0.2em; /* Added letter spacing */
     transition: color 0.3s; /* Added transition for hover effect */
+    font-weight: bold; /* Make the text bold */
   }
 
   .enter-button:hover {
@@ -68,8 +57,9 @@
 
   /* Mobile-specific styles */
   @media only screen and (max-width: 600px) {
-    .video-background video.desktop-video {
-      display: none;
+    .video-background iframe {
+      width: 100%;
+      height: 100%;
     }
   }
 </style>
@@ -77,18 +67,8 @@
 <body>
 <div class="video-container">
   <div class="video-background">
-    <!-- Mobile version -->
-    <video autoplay muted loop>
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa video for mob 12200-transcode.mp4" type="video/mp4">
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d77840ed41639619bed3cd_jopa video for mob 12200-transcode.webm" type="video/webm">
-      Your browser does not support the video tag.
-    </video>
-    <!-- Desktop version -->
-    <video autoplay muted loop class="desktop-video">
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d73939c4fb59c82b18ee4c_jopa-main-fullscreen-23sec%2012200-transcode.mp4" type="video/mp4">
-      <source src="https://assets-global.website-files.com/64ad4a3ffcc0c8b54945831b/65d73939c4fb59c82b18ee4c_jopa-main-fullscreen-23sec%2012200-transcode.webm" type="video/webm">
-      Your browser does not support the video tag.
-    </video>
+    <!-- YouTube video embedded via iframe -->
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1VD6DMrM7oY?autoplay=1&mute=1&loop=1&playlist=1VD6DMrM7oY" frameborder="0" allowfullscreen></iframe>
   </div>
   <div class="button-container">
     <a href="https://onlyfans.com/only-fenders" target="_blank" rel="noopener noreferrer"><button class="enter-button">ONLYFANS.COM</button></a>
